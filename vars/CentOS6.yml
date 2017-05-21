@@ -9,4 +9,5 @@ packages:
 
 kvm_service: libvirtd
 kvm_groups:
-  - libvirt
+  - kvm
+  - qemu

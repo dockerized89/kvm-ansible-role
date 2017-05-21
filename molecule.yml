@@ -71,16 +71,16 @@ docker:
       ansible_groups:
         - group1
 
-    - name: debian9
-      image: debian
-      image_version: 9
-      privileged: true
-      environment:
-        container: docker
-      volume_mounts:
-        - '/sys/fs/cgroup:/sys/fs/cgroup:ro'
-      ansible_groups:
-        - group1
+    #- name: debian9
+    #  image: debian
+    #  image_version: 9
+    #  privileged: true
+    #  environment:
+    #    container: docker
+    #  volume_mounts:
+    #    - '/sys/fs/cgroup:/sys/fs/cgroup:ro'
+    #  ansible_groups:
+    #    - group1
 
 verifier:
   name: testinfra

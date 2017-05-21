@@ -1,0 +1,15 @@
+---
+
+packages:
+  - qemu-kvm
+  - libvirt-bin
+  - virtinst
+  - virt-top
+  - bridge-utils
+  - qemu
+
+
+kvm_service: libvirt-bin
+
+kvm_groups:
+  - libvirtd

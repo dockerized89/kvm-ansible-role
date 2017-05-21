@@ -1,0 +1,12 @@
+---
+
+packages:
+  - qemu-kvm
+  - libvirt
+  - python-virtinst
+  - bridge-utils
+
+
+kvm_service: libvirtd
+kvm_groups:
+  - libvirt

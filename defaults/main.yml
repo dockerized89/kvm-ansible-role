@@ -1,0 +1,11 @@
+---
+
+kvm_memory_balloon: "virtio"
+kvm_vms: []
+kvm_admins: []
+
+kvm_package_state: installed
+# Service state: started or stopped
+kvm_service_state: started
+# Enable service: yes or no
+kvm_enable_service: yes

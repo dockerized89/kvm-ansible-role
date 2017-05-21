@@ -1,0 +1,13 @@
+---
+
+packages:
+  - libvirt-daemon
+  - libvirt-client
+  - virt-install
+  - virt-top
+  - bridge-utils
+
+
+kvm_service: libvirtd
+kvm_groups:
+  - libvirt

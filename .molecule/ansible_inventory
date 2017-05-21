@@ -5,7 +5,6 @@ centos7 ansible_connection=docker
 centos6 ansible_connection=docker
 debian7 ansible_connection=docker
 debian8 ansible_connection=docker
-debian9 ansible_connection=docker
 
 [group1]
 ubuntu1404
@@ -14,4 +13,3 @@ centos7
 centos6
 debian7
 debian8
-debian9

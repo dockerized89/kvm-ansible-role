@@ -8,6 +8,6 @@ packages:
   - bridge-utils
 
 
-kvm_service: libvirtd
+kvm_service: libvirt-bin
 kvm_groups:
   - libvirt

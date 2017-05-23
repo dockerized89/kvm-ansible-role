@@ -1,4 +1,13 @@
 ---
+
+molecule:
+  ignore_paths:
+    - .git
+    - .vagrant
+    - .molecule
+    - .tox
+    - tests
+
 dependency:
   name: galaxy
 driver:

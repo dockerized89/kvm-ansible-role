@@ -21,7 +21,7 @@
     name: "{{ item }}"
     append: yes
     groups: "{{ kvm_groups }}"
-  with_items: kvm_administrators
+  with_items: "{{ kvm_admins }}"
   tags: ["kvm", "configuration"]
 
 - name: Ensure kvm/qemu service is {{ kvm_service_state }}

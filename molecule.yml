@@ -5,82 +5,76 @@ driver:
   name: docker
 docker:
   containers:
-    - name: ubuntu1404
-      image: ubuntu
-      image_version: 14.04
-      privileged: true
-      environment:
-        container: docker
-      volume_mounts:
-        - '/sys/fs/cgroup:/sys/fs/cgroup:ro'
-      ansible_groups:
-        - group1
 
-    - name: ubuntu1604
-      image: ubuntu
-      image_version: 16.04
-      privileged: true
-      environment:
-        container: docker
-      volume_mounts:
-        - '/sys/fs/cgroup:/sys/fs/cgroup:ro'
-      ansible_groups:
-        - group1
+  - name: ubuntu1404
+    image: ubuntu
+    image_version: 14.04
+    privileged: True
+    environment:
+      container: docker
+    command: "/sbin/init"
+    ansible_groups:
+      - group1
 
-    - name: centos7
-      image: centos
-      image_version: centos7
-      privileged: true
-      environment:
-        container: docker
-      volume_mounts:
-        - '/sys/fs/cgroup:/sys/fs/cgroup:ro'
-      ansible_groups:
-        - group1
+  - name: ubuntu1604
+    image: ubuntu
+    image_version: 16.04
+    privileged: True
+    environment:
+      container: docker
+    volume_mounts:
+      - '/sys/fs/cgroup:/sys/fs/cgroup:ro'
+    command: "/lib/systemd/systemd"
+    ansible_groups:
+      - group1
 
-    - name: centos6
-      image: centos
-      image_version: centos6
-      privileged: true
-      environment:
-        container: docker
-      volume_mounts:
-        - '/sys/fs/cgroup:/sys/fs/cgroup:ro'
-      ansible_groups:
-        - group1
+  - name: centos72
+    image: centos
+    image_version: 7.2.1511
+    privileged: True
+    environment:
+      container: docker
+    volume_mounts:
+      - '/sys/fs/cgroup:/sys/fs/cgroup:ro'
+    command: "/usr/lib/systemd/systemd"
+    ansible_groups:
+      - group1
 
-    - name: debian7
-      image: debian
-      image_version: 7
-      privileged: true
-      environment:
-        container: docker
-      volume_mounts:
-        - '/sys/fs/cgroup:/sys/fs/cgroup:ro'
-      ansible_groups:
-        - group1
+  - name: centos73
+    image: centos
+    image_version: 7.3.1611
+    privileged: True
+    environment:
+      container: docker
+    volume_mounts:
+      - '/sys/fs/cgroup:/sys/fs/cgroup:ro'
+    command: "/usr/lib/systemd/systemd"
+    ansible_groups:
+      - group1
 
-    - name: debian8
-      image: debian
-      image_version: 8
-      privileged: true
-      environment:
-        container: docker
-      volume_mounts:
-        - '/sys/fs/cgroup:/sys/fs/cgroup:ro'
-      ansible_groups:
-        - group1
+  - name: centos6
+    image: centos
+    image_version: centos6
+    privileged: True
+    environment:
+      container: docker
+    volume_mounts:
+      - '/sys/fs/cgroup:/sys/fs/cgroup:ro'
+    command: "/sbin/init"
+    ansible_groups:
+      - group1
 
-    #- name: debian9
-    #  image: debian
-    #  image_version: 9
-    #  privileged: true
-    #  environment:
-    #    container: docker
-    #  volume_mounts:
-    #    - '/sys/fs/cgroup:/sys/fs/cgroup:ro'
-    #  ansible_groups:
-    #    - group1
+  - name: debian8
+    image: debian
+    image_version: 8
+    privileged: True
+    environment:
+      container: docker
+    volume_mounts:
+      - '/sys/fs/cgroup:/sys/fs/cgroup:ro'
+    command: "/lib/systemd/systemd"
+    ansible_groups:
+      - group1
 
 verifier:
   name: testinfra
